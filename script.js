@@ -1,6 +1,4 @@
-// Enhanced Portfolio JavaScript - Redesigned
 
-// Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
@@ -10,7 +8,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth scrolling for navigation links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -32,7 +30,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Resume Modal Functions
+
 const resumeModal = document.getElementById('resume-modal');
 const closeModal = document.getElementById('close-modal');
 const viewResumeBtn = document.getElementById('view-resume-btn');
@@ -47,7 +45,6 @@ function closeResumeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Resume modal event listeners
 if (viewResumeBtn) {
     viewResumeBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -59,21 +56,18 @@ if (closeModal) {
     closeModal.addEventListener('click', closeResumeModal);
 }
 
-// Close modal when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target === resumeModal) {
         closeResumeModal();
     }
 });
 
-// Close modal with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && resumeModal.classList.contains('show')) {
         closeResumeModal();
     }
 });
 
-// Project Filtering
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -81,11 +75,11 @@ filterButtons.forEach(button => {
     button.addEventListener('click', () => {
         const filter = button.getAttribute('data-filter');
         
-        // Update active button
+
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         
-        // Filter projects
+
         projectCards.forEach(card => {
             if (filter === 'all' || card.getAttribute('data-category') === filter) {
                 card.style.display = 'block';
@@ -104,25 +98,25 @@ filterButtons.forEach(button => {
     });
 });
 
-// Dynamic Skills Showcase
+
 const skillsCategories = document.querySelectorAll('.skills-category');
 let currentSkillIndex = 0;
 
 function rotateSkills() {
-    // Hide current category
+
     skillsCategories[currentSkillIndex].classList.remove('active');
     
-    // Move to next category
+
     currentSkillIndex = (currentSkillIndex + 1) % skillsCategories.length;
     
-    // Show next category
+
     skillsCategories[currentSkillIndex].classList.add('active');
 }
 
-// Start skills rotation
+
 setInterval(rotateSkills, 4000);
 
-// Intersection Observer for fade-in animations
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -133,7 +127,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             
-            // Animate timeline items sequentially
             if (entry.target.classList.contains('experience')) {
                 const timelineItems = entry.target.querySelectorAll('.timeline-item');
                 timelineItems.forEach((item, index) => {
@@ -144,7 +137,6 @@ const observer = new IntersectionObserver((entries) => {
                 });
             }
             
-            // Animate stat numbers
             if (entry.target.classList.contains('hero')) {
                 animateStatNumbers();
             }
@@ -152,12 +144,11 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all fade-in elements
+
 document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Animate stat numbers
 function animateStatNumbers() {
     const statNumbers = document.querySelectorAll('.stat-number');
     
@@ -189,12 +180,10 @@ function animateStatNumbers() {
     });
 }
 
-// Mobile menu toggle
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 let menuOpen = false;
 
-// Create mobile navigation drawer
 const createMobileNav = () => {
     const mobileNav = document.createElement('div');
     mobileNav.className = 'mobile-nav';
@@ -214,17 +203,14 @@ const createMobileNav = () => {
     return mobileNav;
 };
 
-// Initialize mobile nav
 const mobileNav = createMobileNav();
 
-// Mobile menu click handler
 mobileMenu.addEventListener('click', () => {
     menuOpen = !menuOpen;
     mobileMenu.classList.toggle('active');
     mobileNav.classList.toggle('active');
 });
 
-// Handle mobile resume link
 document.querySelector('.mobile-resume-link').addEventListener('click', (e) => {
     e.preventDefault();
     menuOpen = false;
@@ -233,7 +219,6 @@ document.querySelector('.mobile-resume-link').addEventListener('click', (e) => {
     openResumeModal();
 });
 
-// Close mobile menu when clicking a link
 document.querySelectorAll('.mobile-nav-links a:not(.mobile-resume-link)').forEach(link => {
     link.addEventListener('click', () => {
         menuOpen = false;
@@ -242,7 +227,6 @@ document.querySelectorAll('.mobile-nav-links a:not(.mobile-resume-link)').forEac
     });
 });
 
-// Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
     if (menuOpen && !mobileMenu.contains(e.target) && !mobileNav.contains(e.target)) {
         menuOpen = false;
@@ -251,7 +235,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Parallax effect for hero section
 let ticking = false;
 function updateParallax() {
     const scrolled = window.pageYOffset;
@@ -270,7 +253,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add typing effect to tagline
 const tagline = document.querySelector('.hero .tagline');
 if (tagline) {
     const text = tagline.textContent;
@@ -284,12 +266,10 @@ if (tagline) {
             setTimeout(typeWriter, 150);
         }
     };
-    
-    // Start typing after other animations complete
+
     setTimeout(typeWriter, 1200);
 }
 
-// Add hover effect to project cards
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-5px) scale(1.02)';
@@ -300,14 +280,13 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Timeline items animation
 document.querySelectorAll('.timeline-item').forEach((item, index) => {
     item.style.opacity = '0';
     item.style.transform = 'translateY(30px)';
     item.style.transition = 'all 0.6s ease';
 });
 
-// Loading animation for images
+
 const profilePic = document.querySelector('.profile-pic');
 if (profilePic) {
     profilePic.addEventListener('load', function() {
@@ -319,7 +298,6 @@ if (profilePic) {
     });
 }
 
-// Resume image handling
 const resumeImage = document.getElementById('resume-image');
 if (resumeImage) {
     resumeImage.addEventListener('load', function() {
@@ -332,7 +310,6 @@ if (resumeImage) {
     });
 }
 
-// Market ticker animation - More subtle
 const tickerItems = document.querySelectorAll('.ticker-price');
 tickerItems.forEach(item => {
     setInterval(() => {
@@ -341,7 +318,6 @@ tickerItems.forEach(item => {
         const newValue = currentValue + change;
         item.textContent = (newValue > 0 ? '+' : '') + newValue.toFixed(2) + '%';
         
-        // Update classes instead of inline styles
         if (newValue < 0) {
             item.classList.add('negative');
         } else {
@@ -350,7 +326,6 @@ tickerItems.forEach(item => {
     }, 3000);
 });
 
-// Add smooth reveal animation for skill tags
 const skillTags = document.querySelectorAll('.skill-tag');
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
@@ -370,7 +345,6 @@ skillTags.forEach(tag => {
     skillObserver.observe(tag);
 });
 
-// Performance optimization - Debounce scroll events
 let scrollTimeout;
 window.addEventListener('scroll', () => {
     if (scrollTimeout) {
@@ -378,17 +352,16 @@ window.addEventListener('scroll', () => {
     }
     
     scrollTimeout = window.requestAnimationFrame(() => {
-        // Update any scroll-dependent elements here
     });
 });
 
-// Console Easter egg - Updated colors
+
 console.log('%c Welcome to my portfolio! ', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%c Looking for a passionate software engineer? Let\'s connect! ', 'font-size: 16px; color: #8b5cf6;');
 console.log('%c Email: pranav.bhoopal@email.com ', 'font-size: 14px; color: #3b82f6;');
 console.log('%c Pro tip: Try the keyboard shortcut "R" to open my resume! ', 'font-size: 14px; color: #10b981;');
 
-// Keyboard shortcut for resume
+
 document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'r' && !e.ctrlKey && !e.metaKey && !e.altKey) {
         const activeElement = document.activeElement;
@@ -478,7 +451,7 @@ function copyEmail(element) {
 
 function downloadResume() {
     const link = document.createElement('a');
-    link.href = './assets/resume.pdf';
+    link.href = './assets/Pranav|B|Resume.pdf';
     link.setAttribute('download', 'Pranav|B|Resume');
     document.body.appendChild(link);
     link.click();
