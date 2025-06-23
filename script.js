@@ -479,7 +479,7 @@ function copyEmail(element) {
 function downloadResume() {
     const link = document.createElement('a');
     link.href = './assets/resume.pdf';
-    link.setAttribute('download', 'Pranav_Bhoopal_Resume.pdf');
+    link.setAttribute('download', 'Pranav|B|Resume');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
