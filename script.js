@@ -476,6 +476,15 @@ function copyEmail(element) {
     });
 }
 
+function downloadResume() {
+    const link = document.createElement('a');
+    link.href = './assets/resume.pdf';
+    link.setAttribute('download', 'Pranav_Bhoopal_Resume.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
 // Show tooltip on hover
 document.addEventListener('DOMContentLoaded', function() {
     const emailElement = document.querySelector('.email-card p[onclick]');
