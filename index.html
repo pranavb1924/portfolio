@@ -27,20 +27,6 @@
         <svg class="floating-chart" viewBox="0 0 300 150">
             <path class="chart-line" d="M0,50 Q100,100 200,60 T300,90" stroke="url(#gradient)"></path>
         </svg>
-        <div class="market-ticker">
-            <div class="ticker-item">
-                <span class="ticker-symbol">TECH</span>
-                <span class="ticker-price">+2.34%</span>
-            </div>
-            <div class="ticker-item">
-                <span class="ticker-symbol">FINX</span>
-                <span class="ticker-price">+1.82%</span>
-            </div>
-            <div class="ticker-item">
-                <span class="ticker-symbol">CRYPTO</span>
-                <span class="ticker-price">+5.21%</span>
-            </div>
-        </div>
     </div>
 
     <!-- Navigation -->
@@ -51,7 +37,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#featured-projects">Projects</a></li>
                 <li><a href="#resume" class="nav-resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -80,69 +66,222 @@
                 <img src="./assets/profile.png" alt="Pranav Bhoopal" class="profile-pic">
             </div>
             <h1>Pranav Bhoopal</h1>
-            <p class="tagline"> Full Stack Developer | Software Engineer | Student</p>
+            <p class="tagline">Full Stack Developer | Software Engineer</p>
+            <p class="hero-subtitle">Crafting innovative solutions at the intersection of technology and business</p>
             
-            <!-- Dynamic Skills Showcase -->
-            <div class="skills-showcase">
-                <div class="skills-category active" data-category="frontend">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-list">
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">TypeScript</span>
-                        <span class="skill-item">Angular.js</span>
-                        <span class="skill-item">React.js</span>
-                        <span class="skill-item">Tailwind CSS</span>
+            <!-- Skills Ticker -->
+            <div class="skills-ticker-wrapper">
+                <div class="skills-ticker">
+                    <div class="ticker-content">
+                        <!-- Programming Languages -->
+                        <span class="ticker-skill">
+                            <span class="skill-name">Java</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">C#</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">JavaScript</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">TypeScript</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Web Technologies -->
+                        <span class="ticker-skill">
+                            <span class="skill-name">React.js</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Angular</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Next.js</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Node.js</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Redux</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Tailwind CSS</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Databases & Cloud -->
+                        <span class="ticker-skill">
+                            <span class="skill-name">PostgreSQL</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">MySQL</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">SQL Server</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Oracle</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">DynamoDB</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">AWS</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Azure</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Frameworks -->
+                        <span class="ticker-skill">
+                            <span class="skill-name">Spring Boot</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">ASP.NET</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">.NET Core</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">.NET Framework</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Tools -->
+                        <span class="ticker-skill">
+                            <span class="skill-name">Docker</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Kubernetes</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Jenkins</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">GitHub</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Figma</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Postman</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">JIRA</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
                     </div>
-                </div>
-                <div class="skills-category" data-category="backend">
-                    <h3>Backend Development</h3>
-                    <div class="skills-list">
-                        <span class="skill-item">Spring</span>
-                        <span class="skill-item">Spring Boot</span>
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Express.js</span>
-                        <span class="skill-item">RESTful APIs</span>
-                    </div>
-                </div>
-                <div class="skills-category" data-category="database">
-                    <h3>Database Management</h3>
-                    <div class="skills-list">
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">MongoDB</span>
-                        <span class="skill-item">SQL Server</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">Amazon RDS</span>
-                    </div>
-                </div>
-                <div class="skills-category" data-category="devops">
-                    <h3>CI/CD & Cloud</h3>
-                    <div class="skills-list">
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">Kubernetes</span>
-                        <span class="skill-item">Jenkins</span>
-                        <span class="skill-item">GitHub Actions</span>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="ticker-content" aria-hidden="true">
+                        <!-- Programming Languages -->
+                        <span class="ticker-skill">
+                            <span class="skill-name">Java</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">C#</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">JavaScript</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">TypeScript</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Web Technologies -->
+                        <span class="ticker-skill">
+                            <span class="skill-name">React.js</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Angular</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Next.js</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Node.js</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Redux</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Tailwind CSS</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Databases & Cloud -->
+                        <span class="ticker-skill">
+                            <span class="skill-category">Databases & Cloud:</span>
+                            <span class="skill-name">PostgreSQL</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">MySQL</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">SQL Server</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Oracle</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">DynamoDB</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">AWS</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Azure</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Frameworks -->
+                        <span class="ticker-skill">
+                            <span class="skill-category">Frameworks:</span>
+                            <span class="skill-name">Spring Boot</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">ASP.NET</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">.NET Core</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">.NET Framework</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
+                        
+                        <!-- Tools -->
+                        <span class="ticker-skill">
+                            <span class="skill-category">Tools:</span>
+                            <span class="skill-name">Docker</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Kubernetes</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Jenkins</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">GitHub</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Figma</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">Postman</span>
+                        </span>
+                        <span class="ticker-skill">
+                            <span class="skill-name">JIRA</span>
+                        </span>
+                        <span class="ticker-divider">•</span>
                     </div>
                 </div>
             </div>
             
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">2026</span>
-                    <span class="stat-label">MS Information Systems</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">2021</span>
-                    <span class="stat-label">BE Computer Science</span>
-                </div>
-            </div>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#resume" class="btn btn-secondary" id="view-resume-btn">View Resume</a>
+                <a href="#featured-projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -150,33 +289,170 @@
     <!-- About Section -->
     <section class="about fade-in" id="about">
         <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>Hello there! My name is Pranav Bhoopal, I am a software engineer with over 3 years of full stack development experience in the healthcare and fintech domain.</p><br>
-                <p>My Journey in software engineering began during my internship as a full stack developer in Advanced Business and Healthcare Solutions where I had the exceptional oppurtunity to work with a great team and hone my fullstack development skills</p><br>
-                <p>Now I am in the beautiful city of Boston pursuing my Master's in Information Systems at Northeastern University.</p>
-                <div class="skills-cloud">
-                    <span class="skill-tag">React/Next.js</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">AWS/Cloud</span>
-                    <span class="skill-tag">Microservices</span>
-                    <span class="skill-tag">GraphQL</span>
-                    <span class="skill-tag">Docker/K8s</span>
-                    <span class="skill-tag">CI/CD</span>
+        <div class="about-container">
+            <div class="about-content">
+                <div class="about-text-main">
+                    <p class="about-intro">Hello! I'm Pranav Bhoopal, a passionate software engineer with over 3 years of experience crafting innovative solutions in healthcare and fintech domains.</p>
+                    
+                    <p>My journey began during my internship at Advanced Business and Healthcare Solutions, where I discovered my love for building scalable, user-centric applications. Working alongside talented teams, I honed my skills in full-stack development and learned the importance of creating software that makes a real difference.</p>
+                    
+                    <p>Currently pursuing my Master's in Information Systems at Northeastern University in Boston, I'm constantly exploring new technologies and methodologies to stay at the forefront of software engineering.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon"></span>
+                            <div>
+                                <h4>Education</h4>
+                                <p>MS Information Systems - Northeastern University (2026)</p>
+                                <p>BE Computer Science (2021)</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon"></span>
+                            <div>
+                                <h4>Certifications</h4>
+                                <p>AWS Certified Cloud Practitioner</p>
+                                <p>Azure Data Fundamentals</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon"></span>
+                            <div>
+                                <h4>Recognition</h4>
+                                <p>Sport Award 2023 - Advanced Healthcare Solutions</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="about-text">
-                <div class="certifications">
-                    <h3>Certifications & Achievements</h3>
-                    <ul class="cert-list">
-                        <li>AWS Certified Cloud Practitioner</li>
-                        <li>Azure Data Fundamentals</li>
-                        <li>Sport Award 2023 (Advanced Healthcare Solutions)</li>
-                    </ul>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects fade-in" id="featured-projects">
+        <div class="projects-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Showcasing my best work in full-stack development, system design, and innovation</p>
+        </div>
+        
+        <div class="featured-projects-grid">
+            <a class="project-link" href="https://paday-income-calculator.netlify.app/">
+                <div class="featured-project-card">
+                    <div class="project-image-container">
+                        <div class="project-image-placeholder">
+                            <img src="./assets/money.svg" alt="PayDay" class="project-icon">
+                        </div>
+                        <span class="project-badge live">LIVE</span>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">PayDay - Income Calculator</h3>
+                        <p class="project-description">A user-friendly web application for detailed income tax estimation and take-home pay calculations. Helps users make informed financial decisions with accurate computations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                        <div class="project-link-text">View Project →</div>
+                    </div>
                 </div>
-            </div>
+            </a>
+            <a class="project-link" href="https://github.com/pranavb1924/BullionX-Stock-Portfolio-Simulator-with-Stock-Reporting">
+                <div class="featured-project-card">
+                    <div class="project-image-container">
+                        <div class="project-image-placeholder">
+                            <img src="./assets/stock.svg" alt="BullionX" class="project-icon">
+                        </div>
+                        <span class="project-badge development">IN DEVELOPMENT</span>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">BullionX - Stock Portfolio Simulator</h3>
+                        <p class="project-description">A comprehensive web application that demystifies stock market investing through an intuitive sandbox environment. Features real-time data integration, portfolio management, and advanced analytics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">FinnHub API</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-link-text">View Project →</div>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="project-link" href="https://github.com/pranavb1924/RenewLife---Organ-Transplant-Management-System">
+                <div class="featured-project-card">
+                    <div class="project-image-container">
+                        <div class="project-image-placeholder">
+                            <img src="./assets/health-care.svg" alt="RenewLife" class="project-icon">
+                        </div>
+                        <span class="project-badge completed">COMPLETED</span>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">RenewLife - Healthcare Management</h3>
+                        <p class="project-description">A Java-based application streamlining organ transplantation logistics. Built with focus on reliability, security, and user experience to help save lives through efficient process management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Swing UI</span>
+                        </div>
+                        <div class="project-link-text">View Project →</div>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="https://github.com/pranavb1924/mindvault">
+                <div class="featured-project-card">
+                    <div class="project-image-container">
+                        <div class="project-image-placeholder">
+                            <img src="./assets/journal.svg" alt="PayDay" class="project-icon">
+                        </div>
+                        <span class="project-badge development">IN DEVELOPMENT</span>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">MindVault</h3>
+                        <p class="project-description">A secure private journaling website with encryption at different levels</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-link-text">View Project →</div>
+                    </div>
+                </div>
+            </a>
+            <a class="project-link" href="https://github.com/pranavb1924/SplitSync-Smart-Expense-Splitting-Settlements">
+                <div class="featured-project-card">
+                    <div class="project-image-container">
+                        <div class="project-image-placeholder">
+                            <img src="./assets/money.svg" alt="PayDay" class="project-icon">
+                        </div>
+                        <span class="project-badge development">LIVE</span>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Split Sync</h3>
+                        <p class="project-description">A web application designed to allow users to split shared expenses and track financial habits</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-link-text">View Project →</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="projects-cta">
+            <a href="#projects" class="btn btn-primary view-all-projects">
+                View All Projects
+                <span class="btn-arrow">→</span>
+            </a>
         </div>
     </section>
 
@@ -190,7 +466,7 @@
                     <h3>Software Engineer</h3>
                     <p class="timeline-company">Punarva Eco</p>
                     <p class="timeline-date">Mar 2024 - June 2024</p>
-                    <p>Worked on the design and development of a credit-based payment software, creating responsive user interfaces with Next.js to ensure cross-device compatibility and consistent branding. Developed secure REST APIs for token generation, authentication, and transaction processing, integrating third-party payment services to optimize performance and reduce latency. Conducted comprehensive testing and debugging on front-end and back-end components, addressing performance bottlenecks and reinforcing security best practices.</p>
+                    <p>Designed and developed a credit-based payment software with responsive Next.js interfaces. Built secure REST APIs for authentication and transaction processing, integrating third-party payment services to optimize performance and reduce latency.</p>
                 </div>
             </div>
             <div class="timeline-item">
@@ -199,7 +475,8 @@
                     <h3>Software Engineer</h3>
                     <p class="timeline-company">Advanced Business and Healthcare Solutions</p>
                     <p class="timeline-date">Jan 2022 - Jul 2023</p>
-                    <p style="justify-content: center;">Developed scalable web applications using .NET Core, Vue.js, React.js, and modern CSS frameworks, ensuring responsive design and optimal user experience. Assisted in implementing cloud-native solutions leveraging Azure App Services and AWS services including ECS, EC2, and Lambda. Participated in optimizing CI/CD pipelines with Jenkins and GitHub Actions, enhancing deployment efficiency and reliability. Engaged in database development and query optimization with Microsoft SQL Server and MySQL, contributing to robust and high-performance applications.</p></div>
+                    <p>Developed scalable web applications using .NET Core, Vue.js, and React.js. Implemented cloud-native solutions leveraging Azure and AWS services. Optimized CI/CD pipelines with Jenkins and GitHub Actions, enhancing deployment efficiency.</p>
+                </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -207,76 +484,18 @@
                     <h3>Associate Software Engineer</h3>
                     <p class="timeline-company">Advanced Business and Healthcare Solutions</p>
                     <p class="timeline-date">Jan 2021 - Dec 2021</p>
-                    <p>Gained solid foundational understanding of product. Debugged and understood functioning of various code bases, worked on various maintenance tasks to facilitate understanding of product structure. Worked with stakeholders and gained domain knowledge required understand business needs of the product</p></div>
+                    <p>Built strong foundational knowledge of enterprise software development. Collaborated with stakeholders to understand business requirements and contributed to maintenance tasks while gaining domain expertise.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects fade-in" id="projects">
+    <!-- All Projects Section (Hidden by default) -->
+    <section class="projects fade-in" id="projects" style="display: none;">
         <div class="projects-container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">All Projects</h2>
             <div class="projects-grid">
-                <a class="project-link" href="https://github.com/pranavb1924/BullionX-Stock-Portfolio-Simulator-with-Stock-Reporting">
-                    <div class="project-card" data-category="payment">
-                        <div class="project-header">
-                            <div class="project-icon">
-                                <img src="./assets/stock.svg" alt="Payment Icon" class="icon-placeholder">
-                            </div>
-                            <span class="project-status development">IN DEVELOPMENT</span>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Bullion X</h3>
-                            <p class="project-description">A live, interactive web application designed to simplify and demystify stock market investing, offering users an intuitive sandbox environment to explore trading strategies in real time.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">Angular</span>
-                                <span class="tech-badge">Springboot</span>
-                                <span class="tech-badge">PostgreSQL</span>
-                                <span class="tech-badge">FinnHub API</span>
-                                <span class="tech-badge">Docker</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>    
-                <a class="project-link" href="https://github.com/pranavb1924/RenewLife---Organ-Transplant-Management-System">
-                <div class="project-card" data-category="Healthcare">
-                    <div class="project-header">
-                        <div class="project-icon" data-icon-fallback="DATA">
-                            <img src="./assets/health-care.svg" alt="Analytics Icon" class="icon-placeholder">
-                        </div>
-                        <span class="project-status live">Completed </span>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Renew Life</h3>
-                        <p class="project-description">A java application to manage the logistics involved in the organ transplantation process</p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">Swing
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a class="project-link" href="https://paday-income-calculator.netlify.app/">
-                <div class="project-card" data-category="trading">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <img src="./assets/money.svg" alt="AI Icon" class="icon-placeholder">
-                        </div>
-                        <span class="project-status live">Live</span>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pay Day</h3>
-                        <p class="project-description">A web application to estimate income tax and take home pay in detail</p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">HTML</span>
-                            <span class="tech-badge">CSS</span>
-                        </div>
-                    </div>
-                </div> 
-            </a>          
+                <!-- Projects will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -291,56 +510,54 @@
                     <img src="./assets/email.svg" alt="Email Icon" class="icon-placeholder">
                 </div>
                 <h3>Email</h3>
-                <p style="font-size: 12px;" copyEmail(this) data-email="bhoopal.p@northeastern.edu">
+                <p onclick="copyEmail(this)" data-email="bhoopal.p@northeastern.edu">
                     bhoopal.p@northeastern.edu
                     <span class="copy-tooltip">Click to copy</span>
                 </p>
             </div>
             <a href="https://www.linkedin.com/in/pranav-bhoopal/" class="project-link">
-            <div class="contact-card email-card">
-                <div class="contact-icon">
-                    <img src="./assets/linkedin.svg" alt="LinkedIn Icon" class="icon-placeholder">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="./assets/linkedin.svg" alt="LinkedIn Icon" class="icon-placeholder">
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Pranav Bhoopal</p>
                 </div>
-                <h3>LinkedIn</h3>
-                <p style="font-size: 12px;"copyEmail(this) data-email="https://www.linkedin.com/in/pranav-bhoopal/">
-                    Pranav Bhoopal
-                    <span class="copy-tooltip">Click to copy</span>
-                </p>
-            </div>
             </a>
             <a href="https://github.com/pranavb1924" class="project-link">
-            <div class="contact-card email-card">
-                <div class="contact-icon">
-                    <img src="./assets/git.svg" alt="Location Icon" class="icon-placeholder">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="./assets/git.svg" alt="GitHub Icon" class="icon-placeholder">
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>pranavb1924</p>
                 </div>
-                <h3>GitHub</h3>
-                <p>pranavb1924</p>
-            </div>
             </a>
             <a href="https://leetcode.com/u/B-Pranav/" class="project-link">
-                <div class="contact-card email-card">
+                <div class="contact-card">
                     <div class="contact-icon">
-                        <img src="./assets/leetcode.svg" alt="Location Icon" class="icon-placeholder">
+                        <img src="./assets/leetcode.svg" alt="LeetCode Icon" class="icon-placeholder">
                     </div>
-                    <h3>leetcode</h3>
+                    <h3>LeetCode</h3>
                     <p>B-Pranav</p>
                 </div>
-                </a>
-                <a href="https://maps.app.goo.gl/zpAP3HEa7DDDAo4HA" class="project-link">
-                    <div class="contact-card email-card">
-                        <div class="contact-icon">
-                            <img src="./assets/location.svg" alt="Location Icon" class="icon-placeholder">
-                        </div>
-                        <h3>Location</h3>
-                        <p>Boston, MA</p>
+            </a>
+            <a href="https://maps.app.goo.gl/zpAP3HEa7DDDAo4HA" class="project-link">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="./assets/location.svg" alt="Location Icon" class="icon-placeholder">
                     </div>
-                    </a>
+                    <h3>Location</h3>
+                    <p>Boston, MA</p>
+                </div>
+            </a>
         </div>
         <div class="contact-cta">
-            <a href="mailto:pranav.bhoopal@email.com" class="btn btn-primary">Send Message</a>
+            <a href="mailto:bhoopal.p@northeastern.edu" class="btn btn-primary">Send Message</a>
         </div>
     </section>
 
+    <!-- Resume Modal -->
     <div class="resume-modal" id="resume-modal">
         <div class="resume-modal-content">
             <span class="close-modal" id="close-modal">&times;</span>
@@ -351,7 +568,7 @@
             </div>
             <div class="resume-actions">
                 <button onclick="downloadResume()" class="btn btn-primary">Download PDF</button>
-             </div>
+            </div>
         </div>
     </div>
 

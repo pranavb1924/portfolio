@@ -1,4 +1,4 @@
-
+// Scroll Effects
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
+// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -30,10 +30,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
+// Resume Modal
 const resumeModal = document.getElementById('resume-modal');
 const closeModal = document.getElementById('close-modal');
-const viewResumeBtn = document.getElementById('view-resume-btn');
 
 function openResumeModal() {
     resumeModal.classList.add('show');
@@ -43,13 +42,6 @@ function openResumeModal() {
 function closeResumeModal() {
     resumeModal.classList.remove('show');
     document.body.style.overflow = 'auto';
-}
-
-if (viewResumeBtn) {
-    viewResumeBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openResumeModal();
-    });
 }
 
 if (closeModal) {
@@ -68,55 +60,149 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
+// View All Projects Functionality
+const viewAllProjectsBtn = document.querySelector('.view-all-projects');
+const allProjectsSection = document.getElementById('projects');
+const featuredProjectsSection = document.getElementById('featured-projects');
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
+if (viewAllProjectsBtn) {
+    viewAllProjectsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         
-
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        
-
-        projectCards.forEach(card => {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                card.style.display = 'block';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 10);
-            } else {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300);
+        // Show all projects section
+        if (allProjectsSection) {
+            allProjectsSection.style.display = 'block';
+            
+            // Populate all projects grid if empty
+            const projectsGrid = allProjectsSection.querySelector('.projects-grid');
+            if (projectsGrid && projectsGrid.children.length === 0) {
+                projectsGrid.innerHTML = `
+                    <!-- Featured Projects -->
+                    <a class="project-link" href="https://github.com/pranavb1924/BullionX-Stock-Portfolio-Simulator-with-Stock-Reporting">
+                        <div class="project-card" data-category="fintech">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <img src="./assets/stock.svg" alt="Stock Icon" class="icon-placeholder">
+                                </div>
+                                <span class="project-status development">IN DEVELOPMENT</span>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">BullionX</h3>
+                                <p class="project-description">Live stock portfolio simulator with real-time data integration</p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Angular</span>
+                                    <span class="tech-badge">Spring Boot</span>
+                                    <span class="tech-badge">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a class="project-link" href="https://github.com/pranavb1924/RenewLife---Organ-Transplant-Management-System">
+                        <div class="project-card" data-category="healthcare">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <img src="./assets/health-care.svg" alt="Healthcare Icon" class="icon-placeholder">
+                                </div>
+                                <span class="project-status live">COMPLETED</span>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">RenewLife</h3>
+                                <p class="project-description">Organ transplant logistics management system</p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Java</span>
+                                    <span class="tech-badge">MySQL</span>
+                                    <span class="tech-badge">Swing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a class="project-link" href="https://paday-income-calculator.netlify.app/">
+                        <div class="project-card" data-category="tools">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <img src="./assets/money.svg" alt="Calculator Icon" class="icon-placeholder">
+                                </div>
+                                <span class="project-status live">LIVE</span>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">PayDay</h3>
+                                <p class="project-description">Income tax and take-home pay calculator</p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Additional Projects -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span style="color: white;">🌐</span>
+                            </div>
+                            <span class="project-status development">UPCOMING</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">Full-stack e-commerce solution with microservices architecture</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="ai">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span style="color: white;">🤖</span>
+                            </div>
+                            <span class="project-status development">PLANNING</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Chat Assistant</h3>
+                            <p class="project-description">Intelligent chatbot with natural language processing capabilities</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">TensorFlow</span>
+                                <span class="tech-badge">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="mobile">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span style="color: white;">📱</span>
+                            </div>
+                            <span class="project-status development">CONCEPT</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Fitness Tracker</h3>
+                            <p class="project-description">Cross-platform mobile app for fitness and health tracking</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">React Native</span>
+                                <span class="tech-badge">Firebase</span>
+                                <span class="tech-badge">Redux</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
             }
-        });
+            
+            // Smooth scroll to projects section
+            allProjectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
     });
-});
-
-
-const skillsCategories = document.querySelectorAll('.skills-category');
-let currentSkillIndex = 0;
-
-function rotateSkills() {
-
-    skillsCategories[currentSkillIndex].classList.remove('active');
-    
-
-    currentSkillIndex = (currentSkillIndex + 1) % skillsCategories.length;
-    
-
-    skillsCategories[currentSkillIndex].classList.add('active');
 }
 
-
-setInterval(rotateSkills, 4000);
-
-
+// Intersection Observer for Animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -136,50 +222,16 @@ const observer = new IntersectionObserver((entries) => {
                     }, index * 200);
                 });
             }
-            
-            if (entry.target.classList.contains('hero')) {
-                animateStatNumbers();
-            }
         }
     });
 }, observerOptions);
 
-
+// Observe all fade-in elements
 document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-function animateStatNumbers() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    statNumbers.forEach(stat => {
-        const target = stat.textContent;
-        const isPercentage = target.includes('%');
-        const isDollar = target.includes('$');
-        const hasPlus = target.includes('+');
-        
-        let number = parseInt(target.replace(/[^0-9]/g, ''));
-        let current = 0;
-        const increment = number / 50;
-        
-        const updateNumber = () => {
-            current += increment;
-            if (current < number) {
-                let display = Math.floor(current);
-                if (isDollar) display = '$' + display + 'M';
-                else if (isPercentage) display = display + '%';
-                if (hasPlus) display += '+';
-                stat.textContent = display;
-                requestAnimationFrame(updateNumber);
-            } else {
-                stat.textContent = target;
-            }
-        };
-        
-        updateNumber();
-    });
-}
-
+// Mobile Menu
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 let menuOpen = false;
@@ -192,7 +244,7 @@ const createMobileNav = () => {
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#featured-projects">Projects</a></li>
             <li><a href="#resume" class="mobile-resume-link">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -211,6 +263,7 @@ mobileMenu.addEventListener('click', () => {
     mobileNav.classList.toggle('active');
 });
 
+// Mobile Resume Link
 document.querySelector('.mobile-resume-link').addEventListener('click', (e) => {
     e.preventDefault();
     menuOpen = false;
@@ -219,6 +272,7 @@ document.querySelector('.mobile-resume-link').addEventListener('click', (e) => {
     openResumeModal();
 });
 
+// Close mobile menu on link click
 document.querySelectorAll('.mobile-nav-links a:not(.mobile-resume-link)').forEach(link => {
     link.addEventListener('click', () => {
         menuOpen = false;
@@ -227,6 +281,7 @@ document.querySelectorAll('.mobile-nav-links a:not(.mobile-resume-link)').forEac
     });
 });
 
+// Close mobile menu on outside click
 document.addEventListener('click', (e) => {
     if (menuOpen && !mobileMenu.contains(e.target) && !mobileNav.contains(e.target)) {
         menuOpen = false;
@@ -235,6 +290,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Parallax Effect
 let ticking = false;
 function updateParallax() {
     const scrolled = window.pageYOffset;
@@ -253,26 +309,10 @@ window.addEventListener('scroll', () => {
     }
 });
 
-const tagline = document.querySelector('.hero .tagline');
-if (tagline) {
-    const text = tagline.textContent;
-    tagline.textContent = '';
-    let i = 0;
-    
-    const typeWriter = () => {
-        if (i < text.length) {
-            tagline.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 150);
-        }
-    };
-
-    setTimeout(typeWriter, 1200);
-}
-
-document.querySelectorAll('.project-card').forEach(card => {
+// Enhanced Project Card Hover Effect
+document.querySelectorAll('.featured-project-card, .project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px) scale(1.02)';
+        this.style.transform = 'translateY(-8px) scale(1.02)';
     });
     
     card.addEventListener('mouseleave', function() {
@@ -280,13 +320,14 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
+// Timeline Items Animation Setup
 document.querySelectorAll('.timeline-item').forEach((item, index) => {
     item.style.opacity = '0';
     item.style.transform = 'translateY(30px)';
     item.style.transition = 'all 0.6s ease';
 });
 
-
+// Profile Picture Loading
 const profilePic = document.querySelector('.profile-pic');
 if (profilePic) {
     profilePic.addEventListener('load', function() {
@@ -298,6 +339,7 @@ if (profilePic) {
     });
 }
 
+// Resume Image Loading
 const resumeImage = document.getElementById('resume-image');
 if (resumeImage) {
     resumeImage.addEventListener('load', function() {
@@ -310,103 +352,7 @@ if (resumeImage) {
     });
 }
 
-const tickerItems = document.querySelectorAll('.ticker-price');
-tickerItems.forEach(item => {
-    setInterval(() => {
-        const currentValue = parseFloat(item.textContent);
-        const change = (Math.random() - 0.5) * 0.3;
-        const newValue = currentValue + change;
-        item.textContent = (newValue > 0 ? '+' : '') + newValue.toFixed(2) + '%';
-        
-        if (newValue < 0) {
-            item.classList.add('negative');
-        } else {
-            item.classList.remove('negative');
-        }
-    }, 3000);
-});
-
-const skillTags = document.querySelectorAll('.skill-tag');
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 50);
-        }
-    });
-}, { threshold: 0.1 });
-
-skillTags.forEach(tag => {
-    tag.style.opacity = '0';
-    tag.style.transform = 'translateY(20px)';
-    tag.style.transition = 'all 0.5s ease';
-    skillObserver.observe(tag);
-});
-
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    if (scrollTimeout) {
-        window.cancelAnimationFrame(scrollTimeout);
-    }
-    
-    scrollTimeout = window.requestAnimationFrame(() => {
-    });
-});
-
-
-console.log('%c Welcome to my portfolio! ', 'font-size: 20px; font-weight: bold; color: #6366f1;');
-console.log('%c Looking for a passionate software engineer? Let\'s connect! ', 'font-size: 16px; color: #8b5cf6;');
-console.log('%c Email: pranav.bhoopal@email.com ', 'font-size: 14px; color: #3b82f6;');
-console.log('%c Pro tip: Try the keyboard shortcut "R" to open my resume! ', 'font-size: 14px; color: #10b981;');
-
-
-document.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'r' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-        const activeElement = document.activeElement;
-        if (activeElement.tagName !== 'INPUT' && activeElement.tagName !== 'TEXTAREA') {
-            openResumeModal();
-        }
-    }
-});
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Force projects to show initially
-    projectCards.forEach(card => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-    });
-    
-    // Add loading animation to images
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        if (!img.complete) {
-            img.classList.add('loading');
-            img.addEventListener('load', () => {
-                img.classList.remove('loading');
-            });
-        }
-    });
-    
-    // Initialize AOS-like animations
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.fade-in:not(.visible)');
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementBottom = element.getBoundingClientRect().bottom;
-            
-            if (elementTop < window.innerHeight && elementBottom > 0) {
-                element.classList.add('visible');
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on load
-});
-
+// Copy Email Function
 function copyEmail(element) {
     const email = element.getAttribute('data-email');
     const tooltip = element.querySelector('.copy-tooltip');
@@ -449,17 +395,17 @@ function copyEmail(element) {
     });
 }
 
+// Download Resume Function
 function downloadResume() {
     const link = document.createElement('a');
     link.href = './assets/Pranav|B|Resume.pdf';
-    link.setAttribute('download', 'Pranav|B|Resume');
+    link.setAttribute('download', 'Pranav_Bhoopal_Resume.pdf');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }
-  
+}
 
-// Show tooltip on hover
+// Email Tooltip on Hover
 document.addEventListener('DOMContentLoaded', function() {
     const emailElement = document.querySelector('.email-card p[onclick]');
     if (emailElement) {
@@ -477,4 +423,81 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+// Console Easter Egg
+console.log('%c Welcome to my portfolio! ', 'font-size: 20px; font-weight: bold; color: #6366f1;');
+console.log('%c Looking for a passionate software engineer? Let\'s connect! ', 'font-size: 16px; color: #8b5cf6;');
+console.log('%c Email: bhoopal.p@northeastern.edu ', 'font-size: 14px; color: #3b82f6;');
+console.log('%c Pro tip: Try the keyboard shortcut "R" to open my resume! ', 'font-size: 14px; color: #10b981;');
+
+// Resume Keyboard Shortcut
+document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'r' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        const activeElement = document.activeElement;
+        if (activeElement.tagName !== 'INPUT' && activeElement.tagName !== 'TEXTAREA') {
+            openResumeModal();
+        }
+    }
+});
+
+// Initialize on DOM Load
+document.addEventListener('DOMContentLoaded', () => {
+    // Force projects to show initially
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    });
+    
+    // Add loading animation to images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.classList.add('loading');
+            img.addEventListener('load', () => {
+                img.classList.remove('loading');
+            });
+        }
+    });
+    
+    // Initialize animations
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.fade-in:not(.visible)');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            
+            if (elementTop < window.innerHeight && elementBottom > 0) {
+                element.classList.add('visible');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on load
+    
+    // Skills Ticker Hover Pause
+    const skillsTicker = document.querySelector('.skills-ticker');
+    if (skillsTicker) {
+        skillsTicker.addEventListener('mouseenter', () => {
+            skillsTicker.style.animationPlayState = 'paused';
+        });
+        
+        skillsTicker.addEventListener('mouseleave', () => {
+            skillsTicker.style.animationPlayState = 'running';
+        });
+    }
+});
+
+// Performance optimization
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+    }
+    
+    scrollTimeout = window.requestAnimationFrame(() => {
+        // Scroll-based animations handled here
+    });
 });
