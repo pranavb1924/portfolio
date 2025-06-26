@@ -457,6 +457,7 @@ function downloadResume() {
     link.click();
     document.body.removeChild(link);
   }
+  
 
 // Show tooltip on hover
 document.addEventListener('DOMContentLoaded', function() {
