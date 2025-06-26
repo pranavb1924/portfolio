@@ -747,12 +747,12 @@ nav.scrolled {
 
 .timeline-item:nth-child(odd) {
     left: 0;
-    text-align: right;
+    text-align: justify;
 }
 
 .timeline-item:nth-child(even) {
     left: 50%;
-    text-align: left;
+    text-align: justify;
 }
 
 .timeline-dot {
