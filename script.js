@@ -1,4 +1,3 @@
-
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
@@ -8,13 +7,11 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         
-
         if (targetId === '#resume') {
             openResumeModal();
             return;
@@ -29,7 +26,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
 
 const resumeModal = document.getElementById('resume-modal');
 const closeModal = document.getElementById('close-modal');
@@ -60,24 +56,19 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
 const viewAllProjectsBtn = document.querySelector('.view-all-projects');
 const allProjectsSection = document.getElementById('projects');
-const featuredProjectsSection = document.getElementById('featured-projects');
 
 if (viewAllProjectsBtn) {
     viewAllProjectsBtn.addEventListener('click', (e) => {
         e.preventDefault();
         
-
         if (allProjectsSection) {
             allProjectsSection.style.display = 'block';
             
-
             const projectsGrid = allProjectsSection.querySelector('.projects-grid');
             if (projectsGrid && projectsGrid.children.length === 0) {
                 projectsGrid.innerHTML = `
-                    <!-- Featured Projects -->
                     <a class="project-link" href="https://github.com/pranavb1924/BullionX-Stock-Portfolio-Simulator-with-Stock-Reporting">
                         <div class="project-card" data-category="fintech">
                             <div class="project-header">
@@ -138,7 +129,6 @@ if (viewAllProjectsBtn) {
                         </div>
                     </a>
                     
-                    <!-- Additional Projects -->
                     <div class="project-card" data-category="web">
                         <div class="project-header">
                             <div class="project-icon">
@@ -196,7 +186,6 @@ if (viewAllProjectsBtn) {
                 `;
             }
             
-
             allProjectsSection.scrollIntoView({ behavior: 'smooth' });
         }
     });
@@ -230,7 +219,6 @@ document.querySelectorAll('.fade-in').forEach(el => {
 });
 
 const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
 let menuOpen = false;
 
 const createMobileNav = () => {
@@ -248,25 +236,29 @@ const createMobileNav = () => {
     `;
     
     document.body.appendChild(mobileNav);
-    
     return mobileNav;
 };
 
 const mobileNav = createMobileNav();
 
-mobileMenu.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    mobileMenu.classList.toggle('active');
-    mobileNav.classList.toggle('active');
-});
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+}
 
-document.querySelector('.mobile-resume-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    menuOpen = false;
-    mobileMenu.classList.remove('active');
-    mobileNav.classList.remove('active');
-    openResumeModal();
-});
+const mobileResumeLink = document.querySelector('.mobile-resume-link');
+if (mobileResumeLink) {
+    mobileResumeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        menuOpen = false;
+        mobileMenu.classList.remove('active');
+        mobileNav.classList.remove('active');
+        openResumeModal();
+    });
+}
 
 document.querySelectorAll('.mobile-nav-links a:not(.mobile-resume-link)').forEach(link => {
     link.addEventListener('click', () => {
@@ -277,7 +269,8 @@ document.querySelectorAll('.mobile-nav-links a:not(.mobile-resume-link)').forEac
 });
 
 document.addEventListener('click', (e) => {
-    if (menuOpen && !mobileMenu.contains(e.target) && !mobileNav.contains(e.target)) {
+    if (menuOpen && mobileMenu && mobileNav && 
+        !mobileMenu.contains(e.target) && !mobileNav.contains(e.target)) {
         menuOpen = false;
         mobileMenu.classList.remove('active');
         mobileNav.classList.remove('active');
@@ -318,7 +311,6 @@ document.querySelectorAll('.timeline-item').forEach((item, index) => {
     item.style.transition = 'all 0.6s ease';
 });
 
-
 const profilePic = document.querySelector('.profile-pic');
 if (profilePic) {
     profilePic.addEventListener('load', function() {
@@ -334,7 +326,10 @@ const resumeImage = document.getElementById('resume-image');
 if (resumeImage) {
     resumeImage.addEventListener('load', function() {
         this.style.display = 'block';
-        document.querySelector('.resume-placeholder-text').style.display = 'none';
+        const placeholder = document.querySelector('.resume-placeholder-text');
+        if (placeholder) {
+            placeholder.style.display = 'none';
+        }
     });
     
     resumeImage.addEventListener('error', function() {
@@ -345,6 +340,8 @@ if (resumeImage) {
 function copyEmail(element) {
     const email = element.getAttribute('data-email');
     const tooltip = element.querySelector('.copy-tooltip');
+    
+    if (!email || !tooltip) return;
     
     navigator.clipboard.writeText(email).then(() => {
         tooltip.textContent = 'Copied!';
@@ -357,13 +354,13 @@ function copyEmail(element) {
             }, 200);
         }, 2000);
     }).catch(err => {
-
         const textArea = document.createElement('textarea');
         textArea.value = email;
         textArea.style.position = 'fixed';
         textArea.style.opacity = '0';
         document.body.appendChild(textArea);
         textArea.select();
+        document.execCommand('copy');
         document.body.removeChild(textArea);
         
         tooltip.textContent = 'Copied!';
@@ -379,7 +376,6 @@ function copyEmail(element) {
     });
 }
 
-
 function downloadResume() {
     const link = document.createElement('a');
     link.href = './assets/Pranav|B|Resume.pdf';
@@ -389,26 +385,26 @@ function downloadResume() {
     document.body.removeChild(link);
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const emailElement = document.querySelector('.email-card p[onclick]');
     if (emailElement) {
         const tooltip = emailElement.querySelector('.copy-tooltip');
         
-        emailElement.addEventListener('mouseenter', function() {
-            if (!tooltip.classList.contains('success')) {
-                tooltip.classList.add('show');
-            }
-        });
-        
-        emailElement.addEventListener('mouseleave', function() {
-            if (!tooltip.classList.contains('success')) {
-                tooltip.classList.remove('show');
-            }
-        });
+        if (tooltip) {
+            emailElement.addEventListener('mouseenter', function() {
+                if (!tooltip.classList.contains('success')) {
+                    tooltip.classList.add('show');
+                }
+            });
+            
+            emailElement.addEventListener('mouseleave', function() {
+                if (!tooltip.classList.contains('success')) {
+                    tooltip.classList.remove('show');
+                }
+            });
+        }
     }
 });
-
 
 document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'r' && !e.ctrlKey && !e.metaKey && !e.altKey) {
@@ -419,9 +415,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
-
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
         card.style.opacity = '1';
@@ -453,7 +447,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); 
     
-
     const skillsTicker = document.querySelector('.skills-ticker');
     if (skillsTicker) {
         skillsTicker.addEventListener('mouseenter', () => {
