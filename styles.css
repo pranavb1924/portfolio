@@ -36,6 +36,7 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 body {
@@ -46,6 +47,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     position: relative;
+    max-width: 100vw;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -389,6 +391,7 @@ nav.scrolled {
 
 .skills-ticker-wrapper {
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
     background: rgba(17, 24, 39, 0.5);
     border: 1px solid var(--border-color);
@@ -422,7 +425,8 @@ nav.scrolled {
 
 .skills-ticker {
     display: flex;
-    animation: ticker 40s linear infinite;
+    width: fit-content;
+    animation: ticker 80s linear infinite;
 }
 
 .skills-ticker:hover {
@@ -460,6 +464,11 @@ nav.scrolled {
 }
 
 @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes ticker-mobile {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
@@ -1253,16 +1262,27 @@ nav.scrolled {
     .skills-ticker-wrapper {
         margin-bottom: 2rem;
         padding: 0.875rem 0;
+        max-width: 100vw;
+        overflow: hidden;
     }
     
     .skills-ticker-wrapper::before,
     .skills-ticker-wrapper::after {
-        width: 30px;
+        width: 20px;
+    }
+    
+    .skills-ticker {
+        animation: ticker 80s linear infinite;
+    }
+    
+    .ticker-skill {
+        margin: 0 0.5rem;
     }
     
     .skill-name {
         font-size: 0.813rem;
         padding: 0.3rem 0.6rem;
+        white-space: nowrap;
     }
     
     .cta-buttons {
@@ -1397,6 +1417,21 @@ nav.scrolled {
     .hero h1 {
         font-size: 1.75rem;
         margin-bottom: 0.75rem;
+    }
+    
+    .skills-ticker-wrapper {
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .ticker-skill {
+        margin: 0 0.4rem;
+    }
+    
+    .skill-name {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
     }
     
     .about-content {
